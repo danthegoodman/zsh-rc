@@ -14,11 +14,27 @@ iterm_profile() {
   echo -e '\033]50;SetProfile='$1'\a'
 }
 
+# iterm; set background-color to hex-code
+iterm_bgcolor() {
+  echo -e "\033]Ph$1\033\\"
+}
+
+o2() {
+  iterm_bgcolor 000033
+  export OS_REPO_HOME="$HOME/outschool2"
+}
+
+o1() {
+  iterm_bgcolor 000000
+  export OS_REPO_HOME="$HOME/outschool"
+}
+
+
 # change the color when SSHing
 fancy_ssh() {
-  echo -e "\033]Ph440000\033\\" # set background-color dark red
+  iterm_bgcolor 440000
   ssh $@
-  echo -e "\033]Ph000000\033\\" # set background-color black
+  iterm_bgcolor 000000
 }
 
 npm_if_not_yarnable() {
