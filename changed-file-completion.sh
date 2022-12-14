@@ -1,5 +1,8 @@
 __changed-files-completion() {
-  local output="$(git diff --name-only | fzf --info=hidden --reverse --no-sort --select-1 --exit-0)"
+  local output="$(
+    git diff HEAD --name-only \
+    | fzf --info=hidden --reverse --no-sort "--select-1" --exit-0 \
+  )"
   if [[ -n "$output" ]] ; then
     LBUFFER="$LBUFFER $(grealpath --relative-to="$PWD" "${OS_REPO_HOME}/${output}") "
   fi
