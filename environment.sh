@@ -14,6 +14,7 @@ export NVM_DIR="$HOME/.nvm"
 export PNPM_HOME="/Users/danny/Library/pnpm"
 
 export PATH=\
+~/prog/js-bin-scripts/bin:\
 ~/prog/bin-scripts:\
 ~/outschool/terraform/bin:\
 ~/.outschool/bin:\

@@ -12,7 +12,7 @@ unsetopt clobber
 setopt interactive_comments
 
 # vim mode
-setopt vi
+bindkey -v
 
 # swap cursor shape on keymap change
 function zle-line-init zle-keymap-select() {
