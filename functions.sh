@@ -56,7 +56,7 @@ for_each_dir() {
   local _COMMAND_FOR_EACH=$1;
   shift
 
-  find "$PWD" -type d -maxdepth 1 -mindepth 1 | sort | while read _DIR_FOR_EACH; do
+  for it (*/); do
     "$_COMMAND_FOR_EACH" "$_DIR_FOR_EACH" "$@"
   done
 }
@@ -69,9 +69,10 @@ in_each_dir() {
   fi
 
   local startdir="$PWD"
-  find "$PWD" -type d -maxdepth 1 -mindepth 1 | sort | while read _DIR_FOR_EACH; do
-    cd "$_DIR_FOR_EACH"
+  for it (*/); do
+    cd $it
     "$@"
+    cd $startdir
   done
   cd "$startdir"
 }
