@@ -25,6 +25,7 @@ export PATH=\
 ~/.deno/bin:\
 $PNPM_HOME:\
 /usr/local/opt/postgresql@12/bin:\
+/Applications/Wireshark.app/Contents/MacOS:\
 /usr/local/sbin:\
 /usr/sbin:\
 /sbin:\
