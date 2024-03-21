@@ -8,6 +8,10 @@ export LSCOLORS=$LS_COLORS
 export AWS_VAULT_KEYCHAIN_NAME=login
 export AWS_SESSION_TOKEN_TTL=18h
 
+# I like the reversed UI
+# I prefer exact searches most of the time. Prefix of ' for fuzzy searching
+export FZF_DEFAULT_OPTS="--reverse --exact"
+
 export OS_REPO_HOME="$HOME/outschool"
 export EQUIS_DIR=$HOME/.equis
 export NVM_DIR="$HOME/.nvm"
