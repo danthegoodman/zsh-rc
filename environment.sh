@@ -23,6 +23,7 @@ export PATH=\
 ~/outschool/terraform/bin:\
 ~/.outschool/bin:\
 ~/.deno/bin:\
+~/.cargo/bin:\
 $PNPM_HOME:\
 /usr/local/opt/postgresql@12/bin:\
 /Applications/Wireshark.app/Contents/MacOS:\
