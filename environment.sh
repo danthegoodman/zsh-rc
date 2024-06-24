@@ -13,16 +13,26 @@ export AWS_SESSION_TOKEN_TTL=18h
 export FZF_DEFAULT_OPTS="--reverse --exact"
 
 export EQUIS_DIR=$HOME/.equis
+export VOLTA_HOME="$HOME/.volta"
 export PNPM_HOME="/Users/danny/Library/pnpm"
+
+export HOMEBREW_PREFIX="/opt/homebrew";
+export HOMEBREW_CELLAR="/opt/homebrew/Cellar";
+export HOMEBREW_REPOSITORY="/opt/homebrew";
+export MANPATH="/opt/homebrew/share/man${MANPATH+:$MANPATH}:";
+export INFOPATH="/opt/homebrew/share/info:${INFOPATH:-}";
 
 export PATH=\
 ~/prog/js-bin-scripts/bin:\
 ~/prog/bin-scripts:\
 ~/.deno/bin:\
 ~/.cargo/bin:\
+~/.volta/bin:\
 $PNPM_HOME:\
 /usr/local/opt/postgresql@12/bin:\
 /Applications/Wireshark.app/Contents/MacOS:\
+/opt/homebrew/bin:\
+/opt/homebrew/sbin:\
 /usr/local/sbin:\
 /usr/sbin:\
 /sbin:\
