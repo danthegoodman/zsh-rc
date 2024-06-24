@@ -19,11 +19,3 @@ alias fgrep='gfgrep --color=auto'
 
 # grep with perl regexp
 alias Pgrep='ggrep --color=auto -P'
-
-# os aws-vault
-alias apg="osAwsVaultExec playground"
-alias a-pm="osAwsVaultExec outschool-pm-test"
-
-# I use these commands a lot
-alias mrs='os merge-requests'
-alias dq='os deploy-queue --tail'

@@ -19,30 +19,11 @@ iterm_bgcolor() {
   echo -e "\033]Ph$1\033\\"
 }
 
-o2() {
-  iterm_bgcolor 000033
-  export OS_REPO_HOME="$HOME/outschool2"
-}
-
-o1() {
-  iterm_bgcolor 000000
-  export OS_REPO_HOME="$HOME/outschool"
-}
-
-
 # change the color when SSHing
 fancy_ssh() {
   iterm_bgcolor 440000
   ssh $@
   iterm_bgcolor 000000
-}
-
-npm_if_not_yarnable() {
-  if [[ -f 'yarn.lock' ]]; then
-    echo -e "\033[0;31mThis project should be used with yarn instead of npm\033[0m"
-    return 1
-  fi
-  npm "$@"
 }
 
 for_each_dir() {
@@ -77,52 +58,8 @@ in_each_dir() {
   cd "$startdir"
 }
 
-# AWS credential switcher
-creds(){
-  case "$1" in
-  drk)
-    iterm_badge "DRK"
-    export AWS_PROFILE=drk
-    ;;
-  *)
-    echo "Expected one of [drk]"
-    ;;
-  esac
-}
-
 # equis project jumper
 x() { source "$HOME/prog/equis/equis.sh" "$@"; }
-
-# outschool change directory
-ocd() {
-  local result
-  result="$(\
-    cd "$OS_REPO_HOME" \
-      && { echo '.'; \
-        gfind . -regextype posix-egrep \
-        -regex '.*/(node_modules|dist|cdk.out|.git|.idea|.terraform|.yarn|.next|.yalc)' -prune \
-        -o -path "./cdk" -printf '%p\n' \
-        -o -regex "./ci/.*/package.json" -printf '%h\n' \
-        -o -regex './lang-js/.*/package.json' -printf '%h\n' \
-        -o -regex './lang-docker/.*/Dockerfile' -printf '%h\n' \
-        -o -regex './terraform/.*/main.tf' -printf '%h\n' \
-      } | fzf --reverse --no-sort\
-    )"
-  [[ -z "$result" ]] && return 1
-  cd "$OS_REPO_HOME/${result}"
-}
-ocda() {
-  local result
-  result="$(\
-    cd ~ \
-      && gfind outschool/ -regextype posix-egrep \
-        -regex '.*/(node_modules|dist|cdk.out|.git|.idea|.terraform|.yarn)' -prune \
-        -o -type d -printf '%p\n' \
-      | fzf --reverse --no-sort\
-    )"
-  [[ -z "$result" ]] && return 1
-  cd ~/"${result}"
-}
 
 # git change directory
 gcd() {

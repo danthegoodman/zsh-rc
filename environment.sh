@@ -12,16 +12,12 @@ export AWS_SESSION_TOKEN_TTL=18h
 # I prefer exact searches most of the time. Prefix of ' for fuzzy searching
 export FZF_DEFAULT_OPTS="--reverse --exact"
 
-export OS_REPO_HOME="$HOME/outschool"
 export EQUIS_DIR=$HOME/.equis
-export NVM_DIR="$HOME/.nvm"
 export PNPM_HOME="/Users/danny/Library/pnpm"
 
 export PATH=\
 ~/prog/js-bin-scripts/bin:\
 ~/prog/bin-scripts:\
-~/outschool/terraform/bin:\
-~/.outschool/bin:\
 ~/.deno/bin:\
 ~/.cargo/bin:\
 $PNPM_HOME:\
