@@ -1,11 +1,9 @@
-# ssh should always be fancified
-alias ssh='fancy_ssh'
-
-alias npm_me='npm --userconfig ~/.npmrc-me'
-
 # git
 alias g='git'
 alias gst='git status -sb'
+
+# pnpm
+alias p='pnpm'
 
 # terraform
 alias t='terraform'

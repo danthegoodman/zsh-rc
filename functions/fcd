@@ -1,0 +1,7 @@
+#!/bin/zsh
+
+# fzf cd
+local result
+result="$(fzf --walker=dir,follow)"
+[[ -z "$result" ]] && return 1
+cd "${result}"

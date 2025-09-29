@@ -1,0 +1,9 @@
+#!/bin/zsh
+
+# change background color when using SSH
+printf "\e]1337;SetColors=bg=400\a"
+/usr/bin/ssh $@
+retval=$?
+printf "\e]1337;SetColors=bg=000\a"
+
+return $retval

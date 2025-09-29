@@ -1,0 +1,15 @@
+#!/bin/zsh
+
+if [[ $# -eq 0 ]]; then
+  echo "Usage: in_each_dir [command or function] [args...]"
+  echo '  Executes "{command} {args...}" in each directory'
+  return 1
+fi
+
+local startdir="$PWD"
+for it (*/); do
+  cd $it
+  "$@"
+  cd $startdir
+done
+cd "$startdir"

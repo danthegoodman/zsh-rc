@@ -1,0 +1,15 @@
+#!/bin/zsh
+
+if [[ $# -eq 0 ]]; then
+  echo "Usage: for_each_dir [command or function] [args...]"
+  echo '  Executes "{command} {dir} {args...}" for each directory'
+  return 1
+fi
+
+local _DIR_FOR_EACH;
+local _COMMAND_FOR_EACH=$1;
+shift
+
+for it (*/); do
+  "$_COMMAND_FOR_EACH" "$_DIR_FOR_EACH" "$@"
+done

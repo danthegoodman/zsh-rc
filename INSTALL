@@ -1,0 +1,5 @@
+#!/bin/zsh
+set -eux
+
+ln -s ${0:a:h}/zprofile.sh ~/.zprofile
+ln -s ${0:a:h}/zshrc.sh ~/.zshrc
